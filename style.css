@@ -1,0 +1,120 @@
+*,
+*::After,
+*::before {
+  box-sizing: border-box;
+  font-family: monospace;
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  padding: 1rem;
+  gap: 1rem;
+  background: linear-gradient(120deg, skyblue, lightpink);
+
+}
+
+@media (max-width:40em) {
+  .main {
+    flex-wrap: wrap-reverse !important;
+    flex-direction: column-reverse !important;
+  }
+
+  .grid {
+    max-height: 320px !important;
+    max-width: 320px !important;
+  }
+
+}
+
+.options {
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+
+  button {
+    border: 1px solid black;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0.5rem 1.05rem;
+    font-weight: 500;
+    transition: all 150ms;
+    background: whitesmoke;
+    color: black;
+
+    &:hover {
+      cursor: pointer;
+      color: whitesmoke;
+      background: black;
+    }
+
+    &:active,
+    &:focus-visible {
+      cursor: pointer;
+      scale: 0.96;
+    }
+  }
+
+  .setSize {
+    display: flex;
+    gap: 1rem;
+
+    button {
+      cursor: cell !important;
+      flex: 1;
+    }
+  }
+
+  .setColor {
+    display: flex;
+    background: whitesmoke;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+      /* transform: scale(1.025, 1.025); */
+      background: black;
+    }
+
+    &:active,
+    &:focus-visible {
+      cursor: pointer;
+      /* transform: scale(0.975, 0.975); */
+    }
+
+    .input {
+      background: whitesmoke;
+      flex: 1;
+      outline: none;
+      border: none;
+      border-radius: 0;
+      cursor: default;
+    }
+  }
+}
+
+.grid {
+  background: white;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.497);
+  /* border: 1px solid gray; */
+  flex: 2;
+  overflow: hidden;
+  box-sizing: content-box;
+  height: 640px;
+  max-width: 640px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: start;
+  align-items: start;
+  align-content: start;
+}
